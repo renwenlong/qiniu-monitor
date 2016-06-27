@@ -23,7 +23,7 @@ management:
 spring:
     #数据库
     datasource:
-        url: jdbc:mysql://pub.MedChartDb:33306/NewCaseFolder?useUnicode=true&amp;characterEncoding=UTF-8
+        url: jdbc:mysql://192.168.168.135:33306/NewCaseFolder?useUnicode=true&amp;characterEncoding=UTF-8
         username: xslmedical
         password: x4M0iPlOeSvNTQa
         driver-class-name: com.mysql.jdbc.Driver
@@ -41,7 +41,7 @@ action:
          pubUrl:  http://192.168.100.36:8080/apricotforest-email/send
          prodUrl:  http://192.168.168.36:8080/apricotforest-email/send
     messages:
-         address:  renwenlong@xingshulin.com
+         address:  renwenlong@xingshulin.com,backend@xingshulin.com
          subject:  上传至七牛图片监控邮件
 
 
