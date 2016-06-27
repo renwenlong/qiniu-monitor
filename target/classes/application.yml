@@ -1,0 +1,63 @@
+#服务信息
+info:
+    app:
+        name: qiniu-monitor
+        description: 附件图片上传七牛定时任务及上传比例监控
+        owner:
+            - 任文龙
+        emails:
+            - renwenlong@xingshulin.com
+        env: ${SPRING_PROFILES_ACTIVE}
+        java-version: ${java.version}
+
+
+#默认环境配置
+server:
+    port: 8080
+logging:
+    file: /logs/myapp-renwenlong/app.log
+management:
+    context-path: /
+
+
+spring:
+    #数据库
+    datasource:
+        url: jdbc:mysql://pub.MedChartDb:33306/NewCaseFolder?useUnicode=true&amp;characterEncoding=UTF-8
+        username: xslmedical
+        password: x4M0iPlOeSvNTQa
+        driver-class-name: com.mysql.jdbc.Driver
+    #设置@Table表名映射策略
+    jpa:
+        hibernate:
+            naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
+
+#访问七牛的域名及邮件发送地址和标题
+action:
+    qiuniu:
+         pubUrl:  https://nzpc6oqy2.qnssl.com/
+         prodUrl:  http://medical.xingshulinimg.com/
+    sendemail:
+         pubUrl:  http://192.168.100.36:8080/apricotforest-email/send
+         prodUrl:  http://192.168.168.36:8080/apricotforest-email/send
+    messages:
+         address:  renwenlong@xingshulin.com
+         subject:  上传至七牛图片监控邮件
+
+
+#dev环境相关配置,覆盖上面的默认配置
+---
+spring:
+    profiles: dev
+
+
+#pub环境相关配置,覆盖上面的默认配置
+---
+spring:
+    profiles: pub
+
+
+#prod环境相关配置,覆盖上面的默认配置
+---
+spring:
+    profiles: prod

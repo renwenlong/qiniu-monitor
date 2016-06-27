@@ -1,0 +1,7 @@
+com/test/app/service/trigger/TriggerOne.class
+com/test/app/web/MyAppController.class
+com/test/app/dao/MedicalRecordAffixRepository.class
+com/test/app/Main.class
+com/test/app/service/Job.class
+com/test/app/service/filter/AffixFilterOne.class
+com/test/app/domain/MedicalRecordAffix.class
